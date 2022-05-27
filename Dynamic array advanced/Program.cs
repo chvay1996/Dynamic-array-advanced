@@ -12,15 +12,14 @@ namespace Dynamic_array_advanced
         static void CreateTheSumArrayFunction()
         {
             List<byte> arraySum = new List<byte>();
-            bool arrayStart = true;
-            int num;
+            bool WhetheToStartACycle = true;
 
-            while (arrayStart == true)
+            while (WhetheToStartACycle)
             {
                 Console.Write($"Введите число, exit или sum: ");
                 string str = Console.ReadLine();
 
-                if (str != "sum" && str != "exit" && int.TryParse(str, out num))
+                if (str != "sum" && str != "exit")
                 {
                     byte namberArray = byte.Parse(str);
                     arraySum.Add(namberArray);
@@ -42,7 +41,7 @@ namespace Dynamic_array_advanced
                     Console.Clear();
                     Console.WriteLine("Всего доброго!");
                     Console.ReadLine();
-                    arrayStart = false;
+                    WhetheToStartACycle = false;
                 }
 
                 else Console.WriteLine("Не верно указанна команда!");
