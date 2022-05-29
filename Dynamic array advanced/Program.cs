@@ -13,13 +13,16 @@ namespace Dynamic_array_advanced
         {
             List<byte> arraySum = new List<byte>();
             bool WhetheToStartACycle = true;
+            byte namber = 0;
+
 
             while (WhetheToStartACycle)
             {
                 Console.Write($"Введите число, exit или sum: ");
                 string str = Console.ReadLine();
+                bool checkingForANumber = byte.TryParse(str, out namber);
 
-                if (str != "sum" && str != "exit")
+                if (str != "sum" && str != "exit" && checkingForANumber)
                 {
                     byte namberArray = byte.Parse(str);
                     arraySum.Add(namberArray);
