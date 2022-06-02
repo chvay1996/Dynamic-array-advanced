@@ -13,22 +13,13 @@ namespace Dynamic_array_advanced
         {
             List<byte> arraySum = new List<byte>();
             bool WhetheToStartACycle = true;
-            byte namber = 0;
-
 
             while (WhetheToStartACycle)
             {
                 Console.Write($"Введите число, exit или sum: ");
-                string str = Console.ReadLine();
-                bool checkingForANumber = byte.TryParse(str, out namber);
+                string  str = Console.ReadLine();
 
-                if (str != "sum" && str != "exit" && checkingForANumber)
-                {
-                    byte namberArray = byte.Parse(str);
-                    arraySum.Add(namberArray);
-                }
-
-                else if (str == "sum")
+                if (str == "sum")
                 {
                     byte sum = 0;
 
@@ -38,7 +29,6 @@ namespace Dynamic_array_advanced
                     }
                     Console.WriteLine($"Сумма равна {sum}");
                 }
-
                 else if (str == "exit")
                 {
                     Console.Clear();
@@ -46,8 +36,11 @@ namespace Dynamic_array_advanced
                     Console.ReadLine();
                     WhetheToStartACycle = false;
                 }
-
-                else Console.WriteLine("Не верно указанна команда!");
+                else 
+                {
+                    int.TryParse(str, out int namber);
+                    Console.WriteLine($"Вы ввели число {namber}");
+                }
             }
         }
     }
